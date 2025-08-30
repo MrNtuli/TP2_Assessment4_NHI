@@ -135,7 +135,10 @@ yf = y[mask].copy()
 
 st.sidebar.markdown("---")
 st.sidebar.write("**Data source mode:**")
-st.sidebar.success("Using SAMPLE data") if using_sample else st.sidebar.info("Using REAL CSVs from data/")
+if using_sample:
+    st.sidebar.success("Using SAMPLE data")
+else:
+    st.sidebar.info("Using REAL CSVs from data/")
 
 # ----------------------------- Tabs -----------------------------
 tab1, tab2, tab3 = st.tabs(["Overview", "Explore Data", "Model & Insights"])
